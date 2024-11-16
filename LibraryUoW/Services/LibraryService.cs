@@ -48,6 +48,9 @@ namespace LibraryUoW.Services
             }
         }
 
+        public IEnumerable<Book> GetBooks() =>
+            _unitOfWork.Books.GetAll();
+
         public IEnumerable<Book> GetBooksByGenre(int genreId) =>
             _unitOfWork.Books.GetAll().Where(b => b.GenreId == genreId);
 
